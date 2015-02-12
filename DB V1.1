@@ -1,0 +1,26 @@
+--table create statments for SDFC database
+
+create table employee (
+asurite int NOT NULL,
+password varchar(15) NOT NULL,
+lastName varchar(15) NOT NULL,
+firstName varchar(15) NOT NULL,
+position varchar(15) NOT NULL,
+active bit NOT NULL,
+manager int NOT NULL,
+PRIMARY KEY (asurite),
+FOREIGN KEY (manager) references employee (asurite)
+);
+
+
+create table report (
+reportID int NOT NULL,
+asurite int NOT NULL,
+reportStatus varchar (15) NOT NULL,
+comments varchar (255),
+signature varchar (255) NOT NULL, 
+del bit NOT NULL,
+PRIMARY KEY (reportID),
+FOREIGN KEY (asurite) references employee (asurite)
+)
+	
